@@ -1,1 +1,36 @@
-<p>profile-modal works!</p>
+<button type="button" hidden class="btn btn-primary" data-toggle="modal" data-target="#profile" data-whatever="@fat" #buttonOpen></button>
+
+<div class="modal fade" id="profile" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-target="#staticBackdrop">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" >
+      <div class="modal-header">
+        <h2 class="modal-title text-danger" id="exampleModalLabel">{{profile?.name}}</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm 12">
+            <img [src]="profile?.imageUrl" class="img img-fluid">
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm 12 align-self-center">
+            <ul>
+              <li><h3><i class="fas fa-map-marked-alt"></i> De: {{profile?.address}}</h3></li>
+              <li><h3>Edad: {{profile?.age}}</h3></li>
+              <li><h3>Teléfono: {{profile?.phone}}</h3></li>
+              <li><h3>Intereses: {{profile?.interest}}</h3></li>
+              <li><h3>Lenguajes favoritos: {{profile?.languaje}}</h3></li>
+              <li><h3>Sobre mi: {{profile?.description}}</h3></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <a type="button" [href]="whatsApp" class="btn btn-primary" target="_blanck">Enviar mensaje</a>
+      </div>
+    </div>
+  </div>
+</div>
+

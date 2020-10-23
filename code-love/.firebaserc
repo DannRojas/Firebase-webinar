@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "code-love-e0832": {
+      "hosting": {
+        "code-love": [
+          "code-love-e0832"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "code-love-e0832"
+  }
+}

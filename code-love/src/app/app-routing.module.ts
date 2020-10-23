@@ -8,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profiles/:id', component: ProfilesComponent },
+  { path: 'profiles/:cat', component: ProfilesComponent },
 ];
 
 @NgModule({

@@ -1,1 +1,30 @@
-<p>profiles works!</p>
+<div class="container mt-5">
+  <div class="row">
+
+    <div class="col-lg-8 col-md-9 col-sm-12">
+      <div class="row">
+        <div class="card p-0 mx-auto col-lg-5 col-md-5 col-sm-12" *ngFor="let profile of profiles">
+          <img [src]="profile?.imageUrl" class="card-img-top img img-fluid">
+          <div class="card-body">
+            <h2 class="text-danger mb-0">{{profile.alias}}</h2>
+            <p class="card-text mb-0">Intereses: {{profile.interest}}</p>
+            <p class="card-text">Edad: {{profile.age}} años</p>
+            <a class="btn btn-info btn-block text-white" (click)="profileModalComponent.onOpenModal(profile)">Ver perfil</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-3 not" sticky-top>
+      <div class="card w-100">
+        <div class="card-body">
+          <h3 class="text-danger">No olvides que puedes ponerte en contacto con cualquier persona</h3>
+          <p class="card-text">Solo debes pulsar con el mouse sobre su perfil y buscar su nùmero de celular.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<app-profile-modal></app-profile-modal>

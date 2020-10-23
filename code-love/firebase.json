@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/code-love",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

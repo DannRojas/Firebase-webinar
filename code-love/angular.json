@@ -123,6 +123,10 @@
               "devServerTarget": "code-love:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
