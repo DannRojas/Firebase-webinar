@@ -125,3 +125,54 @@ Escogemos nuestro Proyecto
 Modificamos el Archivo 
 
 ### src/app/app.module.ts
+___
+
+## Desplegar a la nube de Firebase
+
+Primeramente instalamos las herramientas de firebase con el siguiente comando:
+
+    npm install -g firebase-tools
+
+Una vez instaladas las herramientas debemos acceder a nuestra cuenta de google utilizando el siguiente comando:
+
+    firebase login
+
+Ahora iniciaremos el proyecto en el directorio raiz de nuestra app:
+
+    firebase init
+
+Ahora:
+1. Seleccionamos el servicio de **Hosting**
+2. Seleccionamos una **Aplicacion existente**
+1. Elegimos como destino la carpeta **dist/code-love**
+___
+
+Una vez terminadas las configuraciones copeamos los environtents a environments de desarrollo en environment.prod.ts de producción
+
+````ts
+export const environment = {
+  production: true,
+  firebaseConfig : {
+    apiKey: "XXXXXXXXXXXX",
+    authDomain: "XXXXXXXXXXXX",
+    databaseURL: "XXXXXXXXXXXX",
+    projectId: "XXXXXXXXXXXX",
+    storageBucket: "XXXXXXXXXXXX",
+    messagingSenderId: "XXXXXXXXXXXX",
+    appId: "XXXXXXXXXXXX"
+  }
+};
+````
+
+Cuando hayamos finalizado esta configuración ejecutamos el comando
+
+    ng build
+
+Esto construirá nuestra app de Angular lista para desplegar en el hosting de Firebase.
+___
+
+Ahora podemos ejecutar el comando:
+
+    firebase deploy
+
+Cuando se haya terminado de desplegar nuestra aplicación nos devolverá una URL en la cuál podremos ver nuestra app desplegada
