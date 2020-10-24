@@ -176,3 +176,56 @@ Ahora podemos ejecutar el comando:
     firebase deploy
 
 Cuando se haya terminado de desplegar nuestra aplicación nos devolverá una URL en la cuál podremos ver nuestra app desplegada
+___
+
+# Login con Facebook
+
+Primero debemos ingresar a https://developers.facebook.com e ingresar a "mis aplicaciones".
+
+![markdown-assets](./markdown-assets/facebookDev1.png)
+
+Estando aquí seguimos los siguientes pasos:
+
+**1. Creamos un nuevo proyecto**
+
+![markdown-assets](./markdown-assets/facebookDev2.png)
+
+**2. Seleccionamos la siguiente opción**
+
+![markdown-assets](./markdown-assets/facebookDev3.png)
+
+**3. Ponemos nombre a nuestro proyecto y creamos la aplicación**
+
+![markdown-assets](./markdown-assets/facebookDev4.png)
+
+**4. Configuramos la siguiente opción**
+
+![markdown-assets](./markdown-assets/facebookDev5.png)
+
+**5. Damos "Click" sobre Web**
+
+![markdown-assets](./markdown-assets/facebookDev6.png)
+
+**6. En Firebase habilitamos e inicio de sesión con Facebook y copeamos el siguiente enlace**
+
+![markdown-assets](./markdown-assets/facebookDev7.png)
+
+**7. Pegamos la URL de la siguiente manera**
+
+![markdown-assets](./markdown-assets/facebookDev8.png)
+
+**8. Aquí podremos ver los enlaces necesarios para trabajar con el API de Facebook**
+
+![markdown-assets](./markdown-assets/facebookDev9.png)
+
+**9. Llenamos los campos como se ve en la imagen**
+
+![markdown-assets](./markdown-assets/facebookDev10.png)
+
+**10. Ahora publicamos nuestra App y listo ya tenemos todo listo para trabajar!!**
+
+![markdown-assets](./markdown-assets/facebookDev11.png)
+
+**11. por último pegamos la URL que nos proporciona Firebase en de esta manera**
+
+![markdown-assets](./markdown-assets/facebookDev12.png)
