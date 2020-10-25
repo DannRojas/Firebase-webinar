@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
+import { auth } from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,30 @@ export class AuthService {
     private router: Router
   ) {
     this.userData$ = afAuth.authState;
+  }
+
+  async loginFacebook(){
+    try{
+      const result = await this.afAuth.signInWithPopup( new auth.FacebookAuthProvider());
+      this.router.navigate(['/']);
+      setTimeout(()=>{
+        location.reload();
+      }, 500)
+    }catch(error){
+      console.log(error);
+    }
+  }
+
+  async loginGoogle(){
+    try{
+      const result = await this.afAuth.signInWithPopup( new auth.GoogleAuthProvider() );
+      this.router.navigate(['/']);
+      setTimeout(()=>{
+        location.reload();
+      }, 500)
+    }catch(error){
+      console.log(error);
+    }
   }
 
   async login(email: string, password: string){

@@ -1,0 +1,75 @@
+<div class="container mt-5">
+  <div class="row">
+
+    <div class="card mx-auto col-lg-8 col-md-8 col-sm-12">
+      <h2 class="mt-4 text-danger mx-auto">Perfil de Usuario</h2>
+      <div class="container">
+        <form class="row mt-2" (ngSubmit)="onAddOrUpdate()" #registerForm="ngForm">
+          <mat-form-field class="col-5 mx-auto" color="accent">
+            <mat-label>Nombre completo</mat-label>
+            <input matInput type="text" placeholder="Ej. José Gutierrez Rocha" name="name" [(ngModel)]="profile.name" #name="ngModel" required>
+            <mat-error *ngIf="name.invalid">Nombre requerido</mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-5 mx-auto" color="accent">
+            <mat-label>Alias</mat-label>
+            <input matInput type="text" placeholder="José" name="alias" [(ngModel)]="profile.alias" #alias="ngModel" required>
+            <mat-error *ngIf="alias.invalid">Alias requerido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="col-5 mx-auto" color="accent">
+            <mat-label>Edad</mat-label>
+            <input matInput type="number" placeholder="Ej. 24" name="age" [(ngModel)]="profile.age" #age="ngModel" required min="15">
+            <mat-error *ngIf="age.invalid">Edad enválida</mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-5 mx-auto" color="accent">
+            <mat-label>Ciudad de origen</mat-label>
+            <input matInput type="text" placeholder="Ej. La Paz-Bolivia" name="address" [(ngModel)]="profile.address" #address="ngModel" required>
+            <mat-error *ngIf="address.invalid">Origen requerido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="col-5 mx-auto" color="accent">
+            <mat-label>Número telefónico</mat-label>
+            <input matInput type="text" placeholder="Ej. 78562147" name="phone" [(ngModel)]="profile.phone" #phone="ngModel" required minlength="8">
+            <mat-error *ngIf="phone.invalid">Número inválido</mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-5 mx-auto" color="accent">
+            <mat-label>Intereses</mat-label>
+            <input matInput type="text" placeholder="" name="interest" [(ngModel)]="profile.interest" #interest="ngModel" required>
+            <mat-error *ngIf="interest.invalid">Intereses es requerido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="col-5 mx-auto" color="accent">
+            <mat-label>Lenguajes</mat-label>
+            <select matNativeControl name="languaje" [(ngModel)]="profile.languaje" required>
+              <option value="c++">C++</option>
+              <option value="java">Java</option>
+              <option value="python">Python</option>
+            </select>
+          </mat-form-field>
+          <mat-form-field class="col-5 mx-auto" color="accent">
+            <mat-label>Sexo</mat-label>
+            <select matNativeControl name="sex" [(ngModel)]="profile.sex" required>
+              <option value="hombre">Hombre</option>
+              <option value="mujer">Mujer</option>
+            </select>
+          </mat-form-field>
+
+          <mat-form-field class="col-5 mx-auto" color=accent>
+            <mat-label >Descripción</mat-label>
+            <textarea matInput name="description" [(ngModel)]="profile.description"></textarea>
+          </mat-form-field>
+          <div class="col-5 mx-auto">
+            <label class="custom-file">
+              <input type="file" (change)="handleImage($event)" />
+              <mat-icon>cloud_upload</mat-icon><span>Subir Imagen</span>
+            </label>
+          </div>
+          <div class="col-12 d-flex justify-content-center">
+            <button type="submit" class="btn btn-danger mt-3  mb-3">Confirmar Perfil</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

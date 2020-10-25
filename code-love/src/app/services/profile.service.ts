@@ -54,15 +54,15 @@ export class ProfileService {
     }
   }
 
-  private saveProfile(profile: ProfileInterface) {
+  public saveProfile(profile: ProfileInterface, imageUrl?: string) {
     const profileObj = {
       uid: profile.uid,
       email: profile.email,
-      password: profile.password,
+      password: profile.password || '',
       name: profile.name,
       alias: profile.alias,
       image: profile.image,
-      imageUrl: this.downloadURL,
+      imageUrl: imageUrl || profile.imageUrl,
       age: profile.age,
       address: profile.address,
       phone: profile.phone,
@@ -72,12 +72,12 @@ export class ProfileService {
       sex: profile.sex
     };
     this.router.navigate(['/']);
-      setTimeout(()=> {
-        location.reload();
-      }, 500);
     if (profile.id) {
       return this.profilesCollection.doc(profile.id).update(profileObj);
     } else {
+      setTimeout(()=> {
+        location.reload();
+      }, 1000);
       return this.profilesCollection.add(profileObj);
     }
   }
@@ -90,8 +90,7 @@ export class ProfileService {
       .pipe(
         finalize(() => {
           fileRef.getDownloadURL().subscribe(urlImage => {
-            this.downloadURL = urlImage;
-            this.saveProfile(profile);
+            this.saveProfile(profile, urlImage);
           });
         })
       ).subscribe();

@@ -49,6 +49,14 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  onLoginFacebook(){
+    this.authService.loginFacebook();
+  }
+
+  onLoginGoogle(){
+    this.authService.loginGoogle();
+  }
+
   onRegister() {
     if (this.registerForm.valid) {
       this.authService.register(

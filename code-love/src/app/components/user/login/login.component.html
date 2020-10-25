@@ -26,6 +26,15 @@
           </mat-form-field>
           <button type="submit" [disabled]="registerForm.invalid" class="btn btn-danger mt-1">Ingresar</button>
         </form>
+        <hr>
+        <div class="col-12 mt-3 d-flex">
+          <button (click)="onLoginFacebook()" mat-mini-fab color="primary" class="mx-auto">
+            <mat-icon>facebook</mat-icon>
+          </button>
+          <button (click)="onLoginGoogle()" mat-mini-fab color="warn" class="mx-auto">
+            <mat-icon>email</mat-icon>
+          </button>
+        </div>
       </div>
     </div>
   </div>
